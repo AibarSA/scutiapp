@@ -1,19 +1,18 @@
 import React from 'react';
 
-import PostList from '../../components/post-list/post-list.component';
 import Header from '../../components/header/header.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 import Footer from '../../components/footer/footer.component';
 
 
-import './homepage.styles.scss';
+import '../homepage/homepage.styles.scss';
 
-const HomePage = () => (
-    <div className='homepage'>
+const DetailsPage = () => (
+    <div className='detailspage'>
       <div className="w3-content" >
             <Header/>
             <div className="w3-row">
-              <PostList/>
+              <h1>Hello from details page!!!</h1>
               <Sidebar/>
             </div><br></br>
       </div>
@@ -21,4 +20,4 @@ const HomePage = () => (
     </div>
 )
 
-export default HomePage;
+export default DetailsPage;

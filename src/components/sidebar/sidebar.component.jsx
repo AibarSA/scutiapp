@@ -8,7 +8,7 @@ import '../../pages/homepage/homepage.styles.scss';
 
 
 const Sidebar = () => (
-    <div class="w3-col l4">
+    <div className="w3-col l4">
   <AboutCard/>
   <hr></hr>
   <PopularPosts/>
