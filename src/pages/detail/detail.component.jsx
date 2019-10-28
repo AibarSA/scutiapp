@@ -30,7 +30,7 @@ const Detail = ({title, description, id, publicationDate, history, match}) => (
   </div>
   <hr/>
 
-  <PopularPostsBottom/>
+  <PopularPostsBottom history={history}/>
       
       
   </div>

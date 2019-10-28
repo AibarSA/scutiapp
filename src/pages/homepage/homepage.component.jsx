@@ -9,20 +9,26 @@ import NavBar from '../../components/nav-bar/nav-bar.component';
 
 import './homepage.styles.scss';
 
-const HomePage = () => (
-    <div className='homepage'>
-      <NavBar/>
-      <div className="w3-content" >
-        <br/>
-        <br/>
-            <Header/>
-            <div className="w3-row">
-              <PostList/>
-              <Sidebar/>
-            </div><br></br>
+class HomePage extends React.Component { 
+
+  
+  render(){
+    return(
+      <div className='homepage'>
+        <NavBar/>
+        <div className="w3-content" >
+          <br/>
+          <br/>
+              <Header/>
+              <div className="w3-row">
+                <PostList/>
+                <Sidebar/>
+              </div><br></br>
+        </div>
+        <Footer/>
       </div>
-      <Footer/>
-    </div>
-)
+  )
+  }
+}
 
 export default HomePage;

@@ -56,7 +56,26 @@ const INITIAL_STATE = {
         "description": "Fought in muddy trenches cut through hundreds of miles of farmland, the war in Ukraine has killed 13,000 people, put a large part of the country under Russia’s control and dragged on for five years almost forgotten by the outside world — until it became a backdrop to the impeachment inquiry of President Trump now unfolding in Washington.\n\nUkraine, politically disorganized and militarily weak, has relied heavily on the United States in its struggle with Russian-backed separatists. But the White House abruptly suspended nearly $400 million in military aid to Ukraine in July and only restored it last month after a bipartisan uproar in Congress.",
         "inStockNumber": 0,
         "bookImage": null
-        }
+        },
+        {
+            "id": 37,
+            "title": "Microsoft Wins Pentagon’s $10 Billion JEDI Contract, Thwarting Amazon",
+            "author": null,
+            "publisher": null,
+            "publicationDate": "Oct. 24, 2019",
+            "language": null,
+            "category": "Fiction",
+            "numberOfPages": 0,
+            "format": null,
+            "isbn": null,
+            "shippingWeight": 0,
+            "listPrice": 0,
+            "ourPrice": 0,
+            "active": true,
+            "description": "Amazon was considered a front-runner for the cloud computing project before President Trump began criticizing the company’s founder, Jeff Bezos. Amazon was considered a front-runner for the cloud computing project before President Trump began criticizing the company’s founder, Jeff Bezos. Amazon was considered a front-runner for the cloud computing project before President Trump began criticizing the company’s founder, Jeff Bezos.Amazon was considered a front-runner for the cloud computing project before President Trump began criticizing the company’s founder, Jeff Bezos.",
+            "inStockNumber": 0,
+            "bookImage": null
+            }
         ]
 }
 

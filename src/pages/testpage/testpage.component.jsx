@@ -13,33 +13,36 @@ import Detail from '../detail/detail.component';
 import NavBar from '../../components/nav-bar/nav-bar.component';
 
 
+
 import '../homepage/homepage.styles.scss';
 
 const TestPage = ({posts, match}) => (
-    
+  
 
-<div className='homepage'>
-<NavBar/>
-<div className="w3-content" >
-<br/>
-        <br/>
-      <Header/>
-      <div className="w3-row">
-      <div className="w3-col l8 s12">
-      {
-                    posts.filter(post =>
-                        post.id == match.params.id).map(({title, description, id, publicationDate}) => (
-                      <Detail key={id} title={title} description={description} publicationDate={publicationDate}/>
-                   ))
+    <div className='homepage'>
+        <NavBar/>
+        <div className="w3-content" >
+              <br/>
+              <br/>
+                <Header/>
+                <div className="w3-row">
+                  <div className="w3-col l8 s12">
+                    {
+                        posts.filter(post =>
+                            post.id == match.params.id).map(({title, description, id, publicationDate}) => (
+                          <Detail key={id} title={title} description={description} publicationDate={publicationDate}/>
+                      ))
 
-              }
-        
+                    }
+                  
+                  </div>
+                <Sidebar/>
+              </div>
+              <br>
+              </br>
         </div>
-        <Sidebar/>
-      </div><br></br>
-</div>
-<Footer/>
-</div>
+        <Footer/>
+    </div>
 )
 const mapStateToProps = createStructuredSelector({
     posts: selectPostList

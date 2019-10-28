@@ -5,7 +5,31 @@ import {createStructuredSelector} from 'reselect';
 import '../../pages/homepage/homepage.styles.scss';
 import {selectPostList} from '../../redux/post/post.selectors';
 
-const PopularPostsBottom = ({posts}) => (
+
+
+ function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+
+const PopularPostsBottom = ({posts, history}) => (
+
+  
     <div className="w3-main">
 
 
@@ -13,8 +37,10 @@ const PopularPostsBottom = ({posts}) => (
   {/* <!-- First Photo Grid--> */}
   <div className="w3-row-padding">
     {
-                   posts.map(({title, description, id, publicationDate}) => (
-                    <div className="w3-third w3-container w3-margin-bottom" key={id} id={id} title={title} description={description} publicationDate={publicationDate}>
+                   
+                   shuffle(posts).filter((post, idx) => idx < 3).map(({title, description, id, publicationDate}) => (
+                    <div className="w3-third w3-container w3-margin-bottom" key={id} id={id} title={title} description={description} publicationDate={publicationDate} 
+                    onClick={() => history.push(`${'/post/'}${id}`)} >
                     <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Norway"  class="w3-hover-opacity"/>
                     <div className="w3-container w3-white">
                       <p><b>{title}</b></p>
