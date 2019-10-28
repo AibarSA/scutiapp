@@ -16,11 +16,11 @@ import NavBar from '../../components/nav-bar/nav-bar.component';
 
 import '../homepage/homepage.styles.scss';
 
-const TestPage = ({posts, match}) => (
+const TestPage = ({posts, match, history}) => (
   
 
     <div className='homepage'>
-        <NavBar/>
+        <NavBar history={history}/>
         <div className="w3-content" >
               <br/>
               <br/>
@@ -29,14 +29,14 @@ const TestPage = ({posts, match}) => (
                   <div className="w3-col l8 s12">
                     {
                         posts.filter(post =>
-                            post.id == match.params.id).map(({title, description, id, publicationDate}) => (
-                          <Detail key={id} title={title} description={description} publicationDate={publicationDate}/>
+                            post.id == match.params.id).map(({title, description, id, publicationDate, bookImage}) => (
+                          <Detail key={id} title={title} description={description} publicationDate={publicationDate} bookImage={bookImage}/>
                       ))
 
                     }
                   
                   </div>
-                <Sidebar/>
+                <Sidebar history={history}/>
               </div>
               <br>
               </br>

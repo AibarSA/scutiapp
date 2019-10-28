@@ -11,8 +11,8 @@ import '../../pages/homepage/homepage.styles.scss';
 const PostList =({posts}) => (
             <div className="w3-col l8 s12">
                {
-                   posts.map(({title, description, id, publicationDate}) => (
-                      <Post key={id} id={id} title={title} description={description} publicationDate={publicationDate}/>
+                   posts.map(({title, description, id, publicationDate, bookImage}) => (
+                      <Post key={id} id={id} bookImage={bookImage} title={title} description={description} publicationDate={publicationDate}/>
                    ))
                }
             </div>

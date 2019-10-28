@@ -8,7 +8,7 @@ import PopularPostsBottom from '../../components/popular-posts-bottom/ppb.compon
 import '../../pages/homepage/homepage.styles.scss';
 
 
-const Detail = ({title, description, id, publicationDate, history, match}) => (
+const Detail = ({title, description, id, publicationDate, history,bookImage, match}) => (
 <div className="post">
   
 
@@ -20,7 +20,7 @@ const Detail = ({title, description, id, publicationDate, history, match}) => (
       
     </div>
     <br/>
-    <img src="https://www.w3schools.com/w3images/woods.jpg" alt="Nature" />
+    <img src={bookImage} alt="Nature" />
     
 
     <div className="w3-container">

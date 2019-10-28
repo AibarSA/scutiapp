@@ -7,12 +7,13 @@ import DetailsPage from '../../pages/detailspage/detailspage.component';
 import '../../pages/homepage/homepage.styles.scss';
 
 
-const Post = ({title, description, id, publicationDate, history, match}) => (
-<div className="post">
+const Post = ({title, description, id, publicationDate, bookImage, history, match}) => (
+<div className="post" >
   {/* <!-- Post --> */}
-  <div className="w3-card-4 w3-margin w3-white">
-    <img src="https://www.w3schools.com/w3images/woods.jpg" alt="Nature" />
-    <div className="w3-container">
+  <div className="w3-card-4 w3-margin w3-white" >
+    <img src={bookImage}/>
+
+      <div className="w3-container" >
       <h3><b>{title}</b></h3>
       <span className="w3-opacity">{publicationDate}</span>
     </div>

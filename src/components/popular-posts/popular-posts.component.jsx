@@ -24,16 +24,31 @@ function shuffle(array) {
   return array;
 }
 
-const PopularPosts = ({posts}) => (
+class PopularPosts extends React.Component{
+
+  // constructor(props){
+  //   super(props);
+  // }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
+
+
+  render(){
+    return(
     <div className="w3-card w3-margin">
     <div className="w3-container w3-padding">
       <h4>Popular Posts</h4>
     </div>
         <ul className="w3-ul w3-hoverable w3-white">
           {
-            shuffle(posts).filter((post, idx) => idx < 4).map(({title, description, id, publicationDate}) => (
-            <li className="w3-padding-16" key={id} id={id} title={title} description={description} publicationDate={publicationDate}>
-              <img src="https://www.w3schools.com/w3images/workshop.jpg" alt="Image"/>
+            shuffle(this.props.posts).filter((post, idx) => idx < 4).map(({title,id, bookImage}) => (
+            <li className="w3-padding-16" key={id} id={id} title={title} bookImage={bookImage}
+            onClick={() => this.props.history.push(`${'/post/'}${id}`)} >
+              {/* <img src="https://www.w3schools.com/w3images/workshop.jpg" /> */}
+              <img src={bookImage} />
 
               <span className="w3-large">{title.substring(0, 63) + "..."}</span><br></br>
               {/* <span>Sed mattis nunc</span> */}
@@ -43,6 +58,9 @@ const PopularPosts = ({posts}) => (
         </ul>
   </div>
 )
+        
+        }
+      }
 const mapStateToProps = createStructuredSelector({
   posts: selectPostList
 })

@@ -7,11 +7,11 @@ import AboutCard from '../../components/about-card/about-card.component';
 import '../../pages/homepage/homepage.styles.scss';
 
 
-const Sidebar = () => (
+const Sidebar = ({history}) => (
     <div className="w3-col l4">
   <AboutCard/>
   <hr></hr>
-  <PopularPosts/>
+  <PopularPosts history={history}/>
   <hr></hr>
   <Quotes/>
 {/* <!-- END Introduction Menu --> */}

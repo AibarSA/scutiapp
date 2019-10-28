@@ -27,9 +27,20 @@ import {selectPostList} from '../../redux/post/post.selectors';
 }
 
 
-const PopularPostsBottom = ({posts, history}) => (
+class PopularPostsBottom extends React.Component{
 
-  
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
+
+
+  render(){
+    return(
     <div className="w3-main">
 
 
@@ -38,10 +49,10 @@ const PopularPostsBottom = ({posts, history}) => (
   <div className="w3-row-padding">
     {
                    
-                   shuffle(posts).filter((post, idx) => idx < 3).map(({title, description, id, publicationDate}) => (
-                    <div className="w3-third w3-container w3-margin-bottom" key={id} id={id} title={title} description={description} publicationDate={publicationDate} 
-                    onClick={() => history.push(`${'/post/'}${id}`)} >
-                    <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Norway"  class="w3-hover-opacity"/>
+                   shuffle(this.props.posts).filter((post, idx) => idx < 3).map(({title, description, id, publicationDate, bookImage}) => (
+                    <div className="w3-third w3-container w3-margin-bottom" key={id} id={id} title={title} description={description} publicationDate={publicationDate} bookImage={bookImage}
+                    onClick={() => this.props.history.push(`${'/post/'}${id}`)} >
+                    <img src={bookImage} class="w3-hover-opacity"/>
                     <div className="w3-container w3-white">
                       <p><b>{title}</b></p>
                       <p>{description.substring(0, 100) + "..."}</p>
@@ -60,6 +71,9 @@ const PopularPostsBottom = ({posts, history}) => (
 
 
 )
+  }
+
+  }
 const mapStateToProps = createStructuredSelector({
     posts: selectPostList
   })
