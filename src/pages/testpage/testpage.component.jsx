@@ -25,19 +25,13 @@ const TestPage = ({posts, match, history}) => (
               <br/>
               <br/>
                 <Header/>
-                <div className="w3-row">
-                  <div className="w3-col l8 s12">
-                    {
+                {
                         posts.filter(post =>
                             post.id == match.params.id).map(({title, description, id, publicationDate, bookImage}) => (
                           <Detail key={id} title={title} description={description} publicationDate={publicationDate} bookImage={bookImage}/>
                       ))
 
                     }
-                  
-                  </div>
-                <Sidebar history={history}/>
-              </div>
               <br>
               </br>
         </div>
