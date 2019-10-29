@@ -1,7 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import {Route} from 'react-router-dom';
-import DetailsPage from '../../pages/detailspage/detailspage.component';
+import ReactMarkdown from 'react-markdown';
 import PopularPostsBottom from '../../components/popular-posts-bottom/ppb.component';
 
 
@@ -9,6 +8,9 @@ import '../../pages/homepage/homepage.styles.scss';
 
 
 const Detail = ({title, description, id, publicationDate, history,bookImage, match}) => (
+
+
+  
 <div className="post">
   
 
@@ -24,14 +26,14 @@ const Detail = ({title, description, id, publicationDate, history,bookImage, mat
     
 
     <div className="w3-container">
-      <p>{description}</p>
+      <ReactMarkdown source={description} escapeHtml={false}/>
+
       
     </div>
   </div>
   <hr/>
 
-  <PopularPostsBottom history={history}/>
-      
+  <PopularPostsBottom history={history}/>      
       
   </div>
 

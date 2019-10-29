@@ -2,11 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 
-import Header from '../../components/header/header.component';
-import Sidebar from '../../components/sidebar/sidebar.component';
-import Footer from '../../components/footer/footer.component';
+
 import {selectPostList} from '../../redux/post/post.selectors';
-import Post from '../../components/post/post.component';
 import {Route} from 'react-router-dom';
 import TestPage from '../testpage/testpage.component';
 

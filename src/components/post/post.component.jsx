@@ -1,17 +1,20 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import {withRouter} from 'react-router-dom';
-import {Route} from 'react-router-dom';
-import DetailsPage from '../../pages/detailspage/detailspage.component';
+
 
 
 import '../../pages/homepage/homepage.styles.scss';
 
 
-const Post = ({title, description, id, publicationDate, bookImage, history, match}) => (
+const Post = ({title, description, id, publicationDate, bookImage, history}) => (
 <div className="post" >
   {/* <!-- Post --> */}
   <div className="w3-card-4 w3-margin w3-white" >
-    <img src={bookImage}/>
+    <div className="post-image">
+    <img src={bookImage} alt=''/>
+    </div>
+    
 
       <div className="w3-container" >
       <h3><b>{title}</b></h3>
@@ -19,7 +22,9 @@ const Post = ({title, description, id, publicationDate, bookImage, history, matc
     </div>
 
     <div className="w3-container">
-      <p>{description}</p>
+
+    <ReactMarkdown source={description} escapeHtml={false}/>
+
       <div className="w3-row">
         <div className="w3-col m8 s12">
           <p><button className="w3-button w3-padding-large w3-white w3-border" 

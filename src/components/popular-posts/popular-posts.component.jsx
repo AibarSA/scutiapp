@@ -24,15 +24,16 @@ function shuffle(array) {
   return array;
 }
 
+
 class PopularPosts extends React.Component{
 
-  // constructor(props){
-  //   super(props);
-  // }
+  
 
   componentDidMount() {
     window.scrollTo(0, 0)
   }
+
+  
 
 
 
@@ -45,7 +46,7 @@ class PopularPosts extends React.Component{
         <ul className="w3-ul w3-hoverable w3-white">
           {
             shuffle(this.props.posts).filter((post, idx) => idx < 4).map(({title,id, bookImage}) => (
-            <li className="w3-padding-16" key={id} id={id} title={title} bookImage={bookImage}
+            <li className="w3-padding-16" key={id} id={id} title={title} 
             onClick={() => this.props.history.push(`${'/post/'}${id}`)} >
               {/* <img src="https://www.w3schools.com/w3images/workshop.jpg" /> */}
               <img src={bookImage} />

@@ -1060,6 +1060,10 @@ a {
     padding: 0 8px
 }
 
+.w3-row-padding{
+    cursor: pointer;
+}
+
 .w3-container,
 .w3-panel {
     padding: 0.01em 16px
@@ -1106,10 +1110,36 @@ a {
 }
 
 .w3-card-4{
+
+    .post-image{
+        height: 284px;
+    }
     
     img{
-        width:100%;
-        height: 284px;
+        // width:100%;
+        // height: 284px;
+        width: 100%;
+      height: 95%;
+      background-size: cover;
+      background-position: center;
+      object-fit: cover;
+    }
+}
+
+.w3-third{
+
+    .bottom-image{
+        height: 200px;
+    }
+    
+    img{
+        // width:100%;
+        // height: 284px;
+        width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      object-fit: cover;
     }
 }
 
