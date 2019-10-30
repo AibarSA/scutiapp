@@ -6,3 +6,8 @@ export const selectPostList = createSelector(
     [selectPosts],
     posts => posts.posts
 )
+
+export const selectPostListFetching = createSelector(
+    [selectPosts],
+    posts => posts.isFetching
+)

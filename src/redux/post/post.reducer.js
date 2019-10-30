@@ -1,4 +1,8 @@
+import PostActionTypes from './post.types';
+
 const INITIAL_STATE = {
+    isFetching: false,
+    errorMessage: undefined,
     posts: [
         {
         "id": 32,
@@ -81,6 +85,23 @@ const INITIAL_STATE = {
 
 const postReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
+        case PostActionTypes.FETCH_POST_LIST_START:
+            return {
+                ...state,
+                isFetching: true
+            }
+        case PostActionTypes.FETCH_POST_LIST_SUCCESS:
+            return{
+                ...state,
+                isFetching: false,
+                posts: action.payload
+            }
+        case PostActionTypes.FETCH_POST_LIST_FAILURE:
+            return {
+                ...state,
+                isFetching: false,
+                errorMessage: action.payload
+            }
         default:
             return state;
 
