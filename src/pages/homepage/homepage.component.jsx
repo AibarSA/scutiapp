@@ -7,7 +7,6 @@ import Footer from '../../components/footer/footer.component';
 import NavBar from '../../components/nav-bar/nav-bar.component';
 
 
-import './homepage.styles.scss';
 
 
 const HomePage = ({posts, match, history}) => (
