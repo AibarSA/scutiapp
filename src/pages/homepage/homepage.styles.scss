@@ -1126,6 +1126,61 @@ a {
     }
 }
 
+.w3-card-4{
+
+    .detail-image{
+        height: 500px;
+    }
+    
+    img{
+        // width:100%;
+        // height: 284px;
+        width: 100%;
+      height: 95%;
+      background-size: cover;
+      background-position: center;
+      object-fit: cover;
+    }
+}
+.desc-content{
+
+   
+    
+    img{
+        // width:100%;
+        // height: 284px;
+        width: 100%;
+      height: 50%;
+      background-size: cover;
+      background-position: center;
+      object-fit: cover;
+    }
+}
+
+.w3-container{
+
+   
+    
+    img{
+        // width:100%;
+        // height: 284px;
+        width: 50%;
+      height: 50%;
+    //   background-size: cover;
+    //   background-position: center;
+    //   object-fit: cover;
+    }
+}
+.w3-container{
+
+    .desc-cover{
+        height: 100px;
+        overflow: hidden;
+
+    }
+
+}
+
 .w3-third{
 
     .bottom-image{

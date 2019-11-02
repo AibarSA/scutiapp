@@ -27,8 +27,8 @@ const TestPage = ({posts, match, history}) => (
                 <Header/>
                 {
                         posts.filter(post =>
-                            post.id == match.params.id).map(({title, description, id, publicationDate, bookImage}) => (
-                          <Detail key={id} title={title} description={description} publicationDate={publicationDate} bookImage={bookImage}/>
+                            post.id == match.params.id).map(({title, description, id, publicationDate, author}) => (
+                          <Detail key={id} title={title} description={description} publicationDate={publicationDate} author={author}/>
                       ))
 
                     }

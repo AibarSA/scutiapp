@@ -25,22 +25,24 @@ class Detail extends React.Component{
             <div className="w3-col l8 s12">
               {
                   this.props.posts.filter(post =>
-                      post.id == this.props.match.params.id).map(({title, description, id, publicationDate, bookImage}) => (
+                      post.id == this.props.match.params.id).map(({title, description, id, publicationDate, author}) => (
                     <div className="post">
-                        <div className="w3-card-4 w3-margin w3-white">
+                        <div className="w3-card-4 w3-margin w3-white p-detail">
                             <div className="w3-center">
                                <br/>
                                <h3><b>{title}</b></h3>
                                <span className="w3-opacity">{publicationDate}</span>
                             </div>
                             <br/>
-                            <img src={bookImage} alt="Nature" />
+                            <div className="detail-image">
+                              <img src={author} alt=''/>
+                            </div>
                             <div className="w3-container">
-                              <ReactMarkdown source={description} escapeHtml={false}/>
+                              <ReactMarkdown key={id} source={description} escapeHtml={false}/>
                             </div>
                         </div>
                           <hr/>
-                          <PopularPostsBottom history={this.props.history}/>
+                          <PopularPostsBottom key={id} history={this.props.history}/>
                     </div>
                 )
                 )

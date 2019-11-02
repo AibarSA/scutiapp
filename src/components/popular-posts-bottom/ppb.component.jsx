@@ -47,11 +47,11 @@ class PopularPostsBottom extends React.Component{
   <div className="w3-row-padding">
     {
                    
-                   shuffle(this.props.posts).filter((post, idx) => idx < 3).map(({title, description, id, bookImage}) => (
+                   shuffle(this.props.posts).filter((post, idx) => idx < 3).map(({title, description, id, author}) => (
                     <div className="w3-third w3-container w3-margin-bottom" key={id} id={id} title={title} description={description} 
                     onClick={() => this.props.history.push(`${'/post/'}${id}`)} >
                       <div className="bottom-image">
-                      <img src={bookImage} className="w3-hover-opacity"/>
+                      <img src={author} className="w3-hover-opacity"/>
                       </div>
                     
                     <div className="w3-container w3-white">

@@ -7,12 +7,12 @@ import {withRouter} from 'react-router-dom';
 import '../../pages/homepage/homepage.styles.scss';
 
 
-const Post = ({title, description, id, publicationDate, bookImage, history}) => (
+const Post = ({title, description, id, publicationDate, author, history}) => (
 <div className="post" >
   {/* <!-- Post --> */}
   <div className="w3-card-4 w3-margin w3-white" >
     <div className="post-image">
-    <img src={bookImage} alt=''/>
+    <img src={author} alt=''/>
     </div>
     
 
@@ -23,7 +23,11 @@ const Post = ({title, description, id, publicationDate, bookImage, history}) => 
 
     <div className="w3-container">
 
+    <div className='desc-cover'>
+    <div className='desc-content'>
     <ReactMarkdown source={description} escapeHtml={false}/>
+    </div>
+    </div>
 
       <div className="w3-row">
         <div className="w3-col m8 s12">
