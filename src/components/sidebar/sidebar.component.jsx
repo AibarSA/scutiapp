@@ -25,11 +25,11 @@ class Sidebar extends React.Component{
   render(){
     return(
     <div className="w3-col l4">
-  <AboutCard/>
+  {/* <AboutCard/> */}
   <hr></hr>
   <PopularPosts history={this.props.history}/>
   <hr></hr>
-  <Quotes/>
+  {/* <Quotes/> */}
 {/* <!-- END Introduction Menu --> */}
 </div>
 )

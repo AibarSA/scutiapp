@@ -15,6 +15,7 @@ const HomePage = ({posts, match, history}) => (
         <div className="w3-content" >
           <br/>
           <br/>
+          <br/>
               <Header/>
               <div className="w3-row">
                 <PostList/>

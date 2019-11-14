@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import {persistStore} from 'redux-persist';
 
 
-const middlewares = [logger, thunk];
+const middlewares = [thunk];
 
 export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 

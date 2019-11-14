@@ -23,7 +23,7 @@ export const fetchPostListFailure = errorMessage => ({
 export const fetchPostListStartAsync = () => {
     return dispatch => {
         dispatch(fetchPostListStart());
-        const postList = fetch('http://localhost:8181/book/bookList')
+        fetch('http://52.14.153.7:8080/store/book/bookList')
         .then(response => {
             dispatch(fetchPostListSuccess(response.json()))
         }).catch(error => dispatch(fetchPostListFailure(error.message)))

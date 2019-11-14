@@ -9,6 +9,7 @@ import '../../pages/homepage/homepage.styles.scss';
 
 const Post = ({title, description, id, publicationDate, author, history}) => (
 <div className="post" >
+  
   {/* <!-- Post --> */}
   <div className="w3-card-4 w3-margin w3-white" >
     <div className="post-image">
@@ -33,6 +34,7 @@ const Post = ({title, description, id, publicationDate, author, history}) => (
         <div className="w3-col m8 s12">
           <p><button className="w3-button w3-padding-large w3-white w3-border" 
           onClick={() => history.push(`${'/post/'}${id}`)}><b>READ MORE »</b></button></p>
+
 
         </div>
         {/* <div className="w3-col m4 w3-hide-small">

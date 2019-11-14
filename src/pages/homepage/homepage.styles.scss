@@ -355,7 +355,7 @@ a {
 .w3-button {
     border: none;
     display: inline-block;
-    padding: 8px 16px;
+    padding: 8px 8px;
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;
@@ -364,6 +364,8 @@ a {
     text-align: center;
     cursor: pointer;
     white-space: nowrap
+
+    
 }
 
 .w3-btn:hover {
@@ -639,6 +641,21 @@ a {
     }
 }
 
+.w3-container{
+    .adsense{
+        width: 336px;
+        height: 280px;
+        border: #000 1px solid;
+        float: right;
+        margin-left: 30px;
+        margin-right: 50px;
+        margin-bottom: 20px;
+        z-index: 5;
+        background-color: white;
+    }
+}
+
+
 .w3-col,
 .w3-half,
 .w3-third,
@@ -658,7 +675,8 @@ a {
 }
 
 .w3-col.s3 {
-    width: 24.99999%
+    width: 16.6666%;
+    font-size: 10px;
 }
 
 .w3-col.s4 {
@@ -765,6 +783,9 @@ a {
     }
     .w3-col.l8 {
         width: 66.66666%
+    }
+    .w3-col.scl8 {
+        width: 98.66666%
     }
     .w3-col.l9 {
         width: 74.99999%
@@ -1156,6 +1177,7 @@ a {
       object-fit: cover;
     }
 }
+
 
 .w3-container{
 
@@ -2050,4 +2072,8 @@ a {
 .w3-border-pale-blue,
 .w3-hover-border-pale-blue:hover {
     border-color: #e7ffff!important
+}
+
+.scutigrey{
+    color: red;
 }

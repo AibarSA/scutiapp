@@ -49,7 +49,7 @@ class PopularPosts extends React.Component{
             <li className="w3-padding-16" key={id} id={id} title={title} 
             onClick={() => this.props.history.push(`${'/post/'}${id}`)} >
               {/* <img src="https://www.w3schools.com/w3images/workshop.jpg" /> */}
-              <img src={author} />
+              <img src={author} alt=""/>
 
               <span className="w3-large">{title.substring(0, 63) + "..."}</span><br></br>
               {/* <span>Sed mattis nunc</span> */}

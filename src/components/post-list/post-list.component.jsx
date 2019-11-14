@@ -1,16 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
-import {convertPostListToMap} from '../../utils/utils';
 import {updatePostList} from '../../redux/post/post.actions';
-import WithSpinner from '../with-spinner/with-spinner.component';
 
 import Post from '../post/post.component';
 import {selectPostList} from '../../redux/post/post.selectors';
 
 import '../../pages/homepage/homepage.styles.scss';
 
-const PostWithSpinner = WithSpinner(Post);
 
 class PostList extends React.Component{
 
@@ -20,7 +17,7 @@ class PostList extends React.Component{
    
    componentDidMount(){
       const {updatePostList} = this.props;
-      fetch('http://localhost:8181/book/bookList')
+      fetch('http://52.14.153.7:8080/store/book/bookList')
       .then(response => response.json())
       .then(posts => 
          { updatePostList(posts);

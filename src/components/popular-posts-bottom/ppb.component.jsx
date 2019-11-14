@@ -51,7 +51,7 @@ class PopularPostsBottom extends React.Component{
                     <div className="w3-third w3-container w3-margin-bottom" key={id} id={id} title={title} description={description} 
                     onClick={() => this.props.history.push(`${'/post/'}${id}`)} >
                       <div className="bottom-image">
-                      <img src={author} className="w3-hover-opacity"/>
+                      <img src={author} className="w3-hover-opacity" alt=""/>
                       </div>
                     
                     <div className="w3-container w3-white">

@@ -3,11 +3,7 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectPostList} from '../../redux/post/post.selectors';
 
-import PostList from '../../components/post-list/post-list.component';
 import Header from '../../components/header/header.component';
-import Sidebar from '../../components/sidebar/sidebar.component';
-import {Route} from 'react-router-dom';
-import Post from '../../components/post/post.component';
 import Footer from '../../components/footer/footer.component';
 import Detail from '../detail/detail.component';
 import NavBar from '../../components/nav-bar/nav-bar.component';
@@ -27,7 +23,7 @@ const TestPage = ({posts, match, history}) => (
                 <Header/>
                 {
                         posts.filter(post =>
-                            post.id == match.params.id).map(({title, description, id, publicationDate, author}) => (
+                            post.id.toString() === match.params.id.toString()).map(({title, description, id, publicationDate, author}) => (
                           <Detail key={id} title={title} description={description} publicationDate={publicationDate} author={author}/>
                       ))
 
