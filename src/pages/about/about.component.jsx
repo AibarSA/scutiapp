@@ -3,12 +3,19 @@ import React from 'react';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 import NavBar from '../../components/nav-bar/nav-bar.component';
+import PopularPostsBottom from '../../components/popular-posts-bottom/ppb.component';
+import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
+import {selectPostList} from '../../redux/post/post.selectors';
+import {withRouter} from 'react-router-dom';
 
 
+class AboutPage extends React.Component{
 
-const AboutPage = ({posts, match, history}) => (
+    render(){
+      return(
       <div className='homepage'>
-        <NavBar history={history}/>
+        <NavBar history={this.props.history}/>
         <div className="w3-content" >
           <br/>
           <br/>
@@ -26,8 +33,10 @@ const AboutPage = ({posts, match, history}) => (
                             <br/>
                             
                             <div className="w3-container">
-                                
-                                <p> scuti facts a website  that takes relevant and complex information from journals, specialized magazines and media and converts it into colorful and animated slideshows that are easy and fun to read, making the information accessible for everyone. </p>
+
+                                <p>The NGC23 Site is a knowledge base for the world’s most random and interesting facts.</p>
+                                <p>We will produce facts about nearly anything you could think of, from the cutest animals to the most dangerous places in the world, there really is something to please everyone here.</p>
+                                <p> NGC23 takes relevant and complex information from journals, specialized magazines and media and makes the information accessible for everyone. </p>
                                 
 
                             </div>
@@ -37,10 +46,15 @@ const AboutPage = ({posts, match, history}) => (
                 
             </div>
             {/* <Sidebar history={history}/> */}
+            <PopularPostsBottom key={this.props.posts.id} history={this.props.history}/>
         </div><br></br>
         </div>
         <Footer/>
       </div>
   )
+      }}
+  const mapStateToProps = createStructuredSelector({
+    posts: selectPostList
+  })
   
-export default AboutPage;
+  export default connect(mapStateToProps)(withRouter(AboutPage));;

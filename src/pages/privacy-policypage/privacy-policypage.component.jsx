@@ -3,11 +3,19 @@ import React from 'react';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 import NavBar from '../../components/nav-bar/nav-bar.component';
+import PopularPostsBottom from '../../components/popular-posts-bottom/ppb.component';
+import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
+import {selectPostList} from '../../redux/post/post.selectors';
+import {withRouter} from 'react-router-dom';
 
 
-const PrivacyPolicyPage = ({posts, match, history}) => (
+class PrivacyPolicyPage extends React.Component{
+
+    render(){
+      return(
       <div className='homepage'>
-        <NavBar history={history}/>
+        <NavBar history={this.props.history}/>
         <div className="w3-content" >
           <br/>
           <br/>
@@ -54,13 +62,15 @@ const PrivacyPolicyPage = ({posts, match, history}) => (
               
             </div>
             {/* <Sidebar history={history}/> */}
+            <PopularPostsBottom key={this.props.posts.id} history={this.props.history}/>
         </div><br></br>
         </div>
         <Footer/>
       </div>
   )
+      }}
+  const mapStateToProps = createStructuredSelector({
+    posts: selectPostList
+  })
   
-
-
-export default PrivacyPolicyPage;
-
+  export default connect(mapStateToProps)(withRouter(PrivacyPolicyPage));

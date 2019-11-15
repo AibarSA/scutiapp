@@ -14,7 +14,7 @@ import '../../pages/homepage/homepage.styles.scss';
 class Detail extends React.Component{
 
   state = {
-    post: {title: '', description: '', id: '', publicationDate: '', author: '' }
+    post: {title: '', description: '', id: '', publicationDate: '', author: '', publisher:'' }
   }
 
 
@@ -39,20 +39,44 @@ class Detail extends React.Component{
                         <title>{this.state.post.title}</title>
                         <meta name="description" content={this.state.post.description.slice(0,100)}/>
                       </Helmet>
-                        <div className="w3-card-4 w3-margin w3-white p-detail">
+                        {/* <div className="w3-card-4 w3-margin w3-white p-detail">
                             <div className="w3-center">
                                <br/>
                                <h3><b>{this.state.post.title}</b></h3>
                                <span className="w3-opacity">{this.state.post.publicationDate}</span>
                             </div>
                             <br/>
-                            {/* <div className="detail-image"> */}
-                              {/* <img src={author} alt=''/> */}
-                            {/* </div> */}
+               
                             <div className="w3-container">
                             <p><div className='adsense'></div><ReactMarkdown key={this.state.post.id} source={this.state.post.description} escapeHtml={false}/></p>
+
                             </div>
-                        </div>
+                        </div> */}
+                        <div class="w3-padding-64 w3-white">
+  <div className="w3-row-padding">
+    <div className="w3-col l8 m6">
+    <h3><b>{this.state.post.title}</b></h3>
+                               <span className="w3-opacity">{this.state.post.publicationDate}</span>
+
+                               <ReactMarkdown key={this.state.post.id} source={this.state.post.publisher} escapeHtml={false}/>
+    </div>
+    <div className="w3-col l4 m6">
+      <img src={this.state.post.author} alt='' className="w3-image w3-right w3-hide-small" width="336" height="280"/>
+      <div className="w3-center w3-hide-large w3-hide-medium">
+
+        <img src={this.state.post.author} alt='' className="w3-image w3-margin-top" width="336" height="280"/>
+      </div>
+    </div>
+    <div className="w3-container">
+
+    <ReactMarkdown key={this.state.post.id} source={this.state.post.description} escapeHtml={false}/>
+
+    </div>
+  </div>
+</div>
+
+
+
                         <div className="w3-row-padding" >
                           <div className="w3-center w3-margin-bottom">
                             <ul className="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
